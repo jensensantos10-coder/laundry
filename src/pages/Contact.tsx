@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter } from 'lucide-react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import gsap from 'gsap'
 import 'leaflet/dist/leaflet.css'
@@ -139,7 +139,7 @@ const Contact: React.FC = () => {
                 <Card hover>
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <FaPhone className="text-primary-600 text-xl" />
+                      <Phone className="text-primary-600" size={22} />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
@@ -156,7 +156,7 @@ const Contact: React.FC = () => {
                 <Card hover>
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <FaEnvelope className="text-primary-600 text-xl" />
+                      <Mail className="text-primary-600" size={22} />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
@@ -173,7 +173,7 @@ const Contact: React.FC = () => {
                 <Card hover>
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <FaMapMarkerAlt className="text-primary-600 text-xl" />
+                      <MapPin className="text-primary-600" size={22} />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
@@ -185,7 +185,7 @@ const Contact: React.FC = () => {
                 <Card hover>
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <FaClock className="text-primary-600 text-xl" />
+                      <Clock className="text-primary-600" size={22} />
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-2">Business Hours</h3>
@@ -207,25 +207,28 @@ const Contact: React.FC = () => {
                     href={BUSINESS_INFO.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center hover:bg-primary-200 transition-colors"
+                    className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center hover:bg-primary-200 transition-all hover:scale-110 active:scale-95"
+                    aria-label="Facebook"
                   >
-                    <FaFacebook className="text-primary-600 text-xl" />
+                    <Facebook className="text-primary-600" size={22} />
                   </a>
                   <a
                     href={BUSINESS_INFO.social.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center hover:bg-primary-200 transition-colors"
+                    className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center hover:bg-primary-200 transition-all hover:scale-110 active:scale-95"
+                    aria-label="Instagram"
                   >
-                    <FaInstagram className="text-primary-600 text-xl" />
+                    <Instagram className="text-primary-600" size={22} />
                   </a>
                   <a
                     href={BUSINESS_INFO.social.twitter}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center hover:bg-primary-200 transition-colors"
+                    className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center hover:bg-primary-200 transition-all hover:scale-110 active:scale-95"
+                    aria-label="Twitter"
                   >
-                    <FaTwitter className="text-primary-600 text-xl" />
+                    <Twitter className="text-primary-600" size={22} />
                   </a>
                 </div>
               </div>

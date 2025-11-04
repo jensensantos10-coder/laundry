@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaFacebook, FaInstagram, FaTwitter, FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock } from 'react-icons/fa'
+import { Facebook, Instagram, Twitter, Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { BUSINESS_INFO, NAVIGATION_LINKS } from '../../utils/constants'
 
 const Footer: React.FC = () => {
@@ -25,24 +25,27 @@ const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-500 transition-colors"
+                aria-label="Facebook"
               >
-                <FaFacebook size={24} />
+                <Facebook size={24} />
               </a>
               <a
                 href={BUSINESS_INFO.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-500 transition-colors"
+                aria-label="Instagram"
               >
-                <FaInstagram size={24} />
+                <Instagram size={24} />
               </a>
               <a
                 href={BUSINESS_INFO.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary-500 transition-colors"
+                aria-label="Twitter"
               >
-                <FaTwitter size={24} />
+                <Twitter size={24} />
               </a>
             </div>
           </div>
@@ -69,17 +72,17 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold text-white mb-4">Contact Us</h4>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
-                <FaMapMarkerAlt className="text-primary-500 mt-1 flex-shrink-0" />
+                <MapPin className="text-primary-500 mt-1 flex-shrink-0" size={18} />
                 <span className="text-gray-400">{BUSINESS_INFO.address}</span>
               </li>
               <li className="flex items-center space-x-3">
-                <FaPhone className="text-primary-500 flex-shrink-0" />
+                <Phone className="text-primary-500 flex-shrink-0" size={18} />
                 <a href={`tel:${BUSINESS_INFO.phone}`} className="text-gray-400 hover:text-primary-500 transition-colors">
                   {BUSINESS_INFO.phone}
                 </a>
               </li>
               <li className="flex items-center space-x-3">
-                <FaEnvelope className="text-primary-500 flex-shrink-0" />
+                <Mail className="text-primary-500 flex-shrink-0" size={18} />
                 <a href={`mailto:${BUSINESS_INFO.email}`} className="text-gray-400 hover:text-primary-500 transition-colors">
                   {BUSINESS_INFO.email}
                 </a>
@@ -92,7 +95,7 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold text-white mb-4">Business Hours</h4>
             <ul className="space-y-2">
               <li className="flex items-start space-x-3">
-                <FaClock className="text-primary-500 mt-1 flex-shrink-0" />
+                <Clock className="text-primary-500 mt-1 flex-shrink-0" size={18} />
                 <div className="text-gray-400">
                   <p>{BUSINESS_INFO.hours.weekdays}</p>
                   <p className="mt-1">{BUSINESS_INFO.hours.saturday}</p>

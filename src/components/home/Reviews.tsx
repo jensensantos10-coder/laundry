@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { FaStar, FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
 import Card from '../ui/Card'
 import { Review } from '../../types'
 
@@ -62,9 +62,10 @@ const Reviews: React.FC = () => {
     return (
       <div className="flex space-x-1">
         {[...Array(5)].map((_, index) => (
-          <FaStar
+          <Star
             key={index}
-            className={index < rating ? 'text-yellow-400' : 'text-gray-300'}
+            className={index < rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}
+            size={20}
           />
         ))}
       </div>
@@ -112,17 +113,17 @@ const Reviews: React.FC = () => {
           {/* Navigation Buttons */}
           <button
             onClick={prevReview}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all active:scale-95"
             aria-label="Previous review"
           >
-            <FaChevronLeft className="text-primary-600" />
+            <ChevronLeft className="text-primary-600" size={20} />
           </button>
           <button
             onClick={nextReview}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 bg-white rounded-full p-3 shadow-lg hover:bg-gray-50 hover:shadow-xl transition-all active:scale-95"
             aria-label="Next review"
           >
-            <FaChevronRight className="text-primary-600" />
+            <ChevronRight className="text-primary-600" size={20} />
           </button>
 
           {/* Dots Indicator */}

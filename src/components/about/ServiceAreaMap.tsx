@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, Circle } from 'react-leaflet'
-import { FaMapMarkerAlt, FaSearch } from 'react-icons/fa'
+import { MapPin, Search } from 'lucide-react'
 import 'leaflet/dist/leaflet.css'
 import { BUSINESS_INFO } from '../../utils/constants'
 import { validateZipCode } from '../../utils/validation'
@@ -93,7 +93,7 @@ const ServiceAreaMap: React.FC = () => {
           <div>
             <Card>
               <div className="flex items-center mb-4">
-                <FaMapMarkerAlt className="text-primary-600 text-2xl mr-3" />
+                <MapPin className="text-primary-600 mr-3" size={24} />
                 <h3 className="text-xl font-semibold text-gray-900">
                   Check Your ZIP Code
                 </h3>
@@ -108,10 +108,10 @@ const ServiceAreaMap: React.FC = () => {
                   onChange={(e) => setZipCode(e.target.value)}
                   placeholder="Enter ZIP code"
                   maxLength={5}
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500"
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 hover:border-primary-300 transition-colors"
                 />
                 <Button onClick={handleCheckZipCode}>
-                  <FaSearch />
+                  <Search size={20} />
                 </Button>
               </div>
               {checkResult && (
