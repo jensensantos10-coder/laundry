@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FaBars, FaTimes, FaPhone } from 'react-icons/fa'
+import { Menu, X, Phone } from 'lucide-react'
 import { NAVIGATION_LINKS, BUSINESS_INFO } from '../../utils/constants'
 import Button from '../ui/Button'
 
@@ -60,7 +60,7 @@ const Header: React.FC = () => {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center space-x-4">
             <a href={`tel:${BUSINESS_INFO.phone}`} className="flex items-center space-x-2 text-gray-700 hover:text-primary-600 transition-colors">
-              <FaPhone className="text-primary-600" />
+              <Phone className="text-primary-600" size={18} />
               <span className="font-semibold">{BUSINESS_INFO.phone}</span>
             </a>
             <Link to="/contact">
@@ -71,9 +71,10 @@ const Header: React.FC = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-gray-700 hover:text-primary-600 transition-colors"
+            className="lg:hidden text-gray-700 hover:text-primary-600 transition-colors p-2"
+            aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
@@ -95,7 +96,7 @@ const Header: React.FC = () => {
                 </Link>
               ))}
               <a href={`tel:${BUSINESS_INFO.phone}`} className="flex items-center space-x-2 text-gray-700 hover:text-primary-600 transition-colors pt-4 border-t border-gray-200">
-                <FaPhone className="text-primary-600" />
+                <Phone className="text-primary-600" size={18} />
                 <span className="font-semibold">{BUSINESS_INFO.phone}</span>
               </a>
               <Link to="/contact">

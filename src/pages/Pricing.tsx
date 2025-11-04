@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { FaCheck, FaStar, FaTags } from 'react-icons/fa'
+import { Check, Star, Tag } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Card from '../components/ui/Card'
@@ -180,8 +180,8 @@ const Pricing: React.FC = () => {
               >
                 {pkg.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center">
-                      <FaStar className="mr-1" /> Most Popular
+                    <span className="bg-gradient-to-r from-primary-500 to-secondary-500 text-white px-4 py-1 rounded-full text-sm font-semibold flex items-center gap-1">
+                      <Star className="fill-white" size={16} /> Most Popular
                     </span>
                   </div>
                 )}
@@ -196,7 +196,7 @@ const Pricing: React.FC = () => {
                 <ul className="space-y-3 mb-6">
                   {pkg.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
-                      <FaCheck className="text-green-500 mt-1 mr-2 flex-shrink-0" />
+                      <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={18} />
                       <span className="text-gray-700">{feature}</span>
                     </li>
                   ))}
@@ -286,8 +286,8 @@ const Pricing: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {promotions.map((promo, index) => (
-              <Card key={index} className="text-center border-2 border-accent-200">
-                <FaTags className="text-accent-500 text-3xl mx-auto mb-4" />
+              <Card key={index} hover className="text-center border-2 border-accent-200 group">
+                <Tag className="text-accent-500 mx-auto mb-4 group-hover:scale-110 transition-transform" size={36} />
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">{promo.title}</h3>
                 <div className="text-3xl font-bold text-accent-600 mb-2">{promo.discount}</div>
                 <p className="text-gray-600 mb-4">{promo.description}</p>

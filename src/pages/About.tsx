@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { FaAward, FaLeaf, FaClock, FaHeart, FaUsers, FaShieldAlt } from 'react-icons/fa'
+import { Award, Leaf, Clock, Heart, Users, Shield } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Card from '../components/ui/Card'
@@ -37,37 +37,37 @@ const team: TeamMember[] = [
 
 const whyChooseUs = [
   {
-    icon: FaAward,
+    icon: Award,
     title: 'Expert Care',
     description: 'Our trained professionals handle each item with expertise and attention to detail.',
     color: 'from-blue-400 to-blue-600'
   },
   {
-    icon: FaLeaf,
+    icon: Leaf,
     title: 'Eco-Friendly',
     description: 'We use environmentally safe detergents and energy-efficient equipment.',
     color: 'from-green-400 to-green-600'
   },
   {
-    icon: FaClock,
+    icon: Clock,
     title: 'Fast Turnaround',
     description: '24-48 hour standard service with same-day options available.',
     color: 'from-purple-400 to-purple-600'
   },
   {
-    icon: FaHeart,
+    icon: Heart,
     title: 'Customer First',
     description: '100% satisfaction guarantee. We\'re not happy until you are.',
     color: 'from-red-400 to-red-600'
   },
   {
-    icon: FaUsers,
+    icon: Users,
     title: 'Trusted by Thousands',
     description: 'Join our community of satisfied customers who trust us with their laundry.',
     color: 'from-orange-400 to-orange-600'
   },
   {
-    icon: FaShieldAlt,
+    icon: Shield,
     title: 'Insured & Bonded',
     description: 'Your items are protected with our comprehensive insurance coverage.',
     color: 'from-teal-400 to-teal-600'
@@ -205,11 +205,11 @@ const About: React.FC = () => {
             {whyChooseUs.map((item, index) => {
               const Icon = item.icon
               return (
-                <Card key={index} hover className="text-center">
-                  <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center`}>
-                    <Icon className="text-white text-2xl" />
+                <Card key={index} hover className="text-center group">
+                  <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="text-white" size={28} />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                     {item.title}
                   </h3>
                   <p className="text-gray-600">

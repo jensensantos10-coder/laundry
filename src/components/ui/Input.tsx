@@ -25,8 +25,8 @@ const Input: React.FC<InputProps> = ({
   multiline = false,
   rows = 4
 }) => {
-  const baseStyles = 'w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 transition-all duration-200'
-  const errorStyles = error ? 'border-red-500' : 'border-gray-300'
+  const baseStyles = 'w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 hover:border-primary-300'
+  const errorStyles = error ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300'
 
   return (
     <div className="mb-4">
@@ -42,7 +42,7 @@ const Input: React.FC<InputProps> = ({
           placeholder={placeholder}
           required={required}
           rows={rows}
-          className={`${baseStyles} ${errorStyles}`}
+          className={`${baseStyles} ${errorStyles} resize-none`}
         />
       ) : (
         <input
@@ -56,7 +56,12 @@ const Input: React.FC<InputProps> = ({
           className={`${baseStyles} ${errorStyles}`}
         />
       )}
-      {error && <p className="mt-1 text-sm text-red-500">{error}</p>}
+      {error && (
+        <p className="mt-2 text-sm text-red-600 flex items-center gap-1">
+          <span className="inline-block w-1 h-1 bg-red-600 rounded-full"></span>
+          {error}
+        </p>
+      )}
     </div>
   )
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react'
-import { FaTshirt, FaSprayCan, FaIcons, FaBoxOpen, FaShoePrints, FaBed, FaCheck } from 'react-icons/fa'
+import { Shirt, Sparkles, Wind, Package, Footprints, BedDouble, Check } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Card from '../components/ui/Card'
@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const services = [
   {
-    icon: FaTshirt,
+    icon: Shirt,
     title: 'Laundry Service',
     description: 'Complete wash, dry, and fold service for your everyday clothing needs.',
     features: [
@@ -24,7 +24,7 @@ const services = [
     color: 'from-blue-400 to-blue-600'
   },
   {
-    icon: FaSprayCan,
+    icon: Sparkles,
     title: 'Dry Cleaning',
     description: 'Expert care for delicate fabrics and special garments that require professional attention.',
     features: [
@@ -37,7 +37,7 @@ const services = [
     color: 'from-purple-400 to-purple-600'
   },
   {
-    icon: FaIcons,
+    icon: Wind,
     title: 'Ironing & Pressing',
     description: 'Professional ironing and steam pressing for crisp, wrinkle-free clothes.',
     features: [
@@ -50,7 +50,7 @@ const services = [
     color: 'from-green-400 to-green-600'
   },
   {
-    icon: FaBoxOpen,
+    icon: Package,
     title: 'Commercial Laundry',
     description: 'Bulk laundry solutions for businesses with high-volume needs.',
     features: [
@@ -63,7 +63,7 @@ const services = [
     color: 'from-orange-400 to-orange-600'
   },
   {
-    icon: FaShoePrints,
+    icon: Footprints,
     title: 'Shoe Cleaning',
     description: 'Professional cleaning and care for all types of footwear.',
     features: [
@@ -76,7 +76,7 @@ const services = [
     color: 'from-red-400 to-red-600'
   },
   {
-    icon: FaBed,
+    icon: BedDouble,
     title: 'Household Items',
     description: 'Cleaning services for larger household items and linens.',
     features: [
@@ -147,11 +147,11 @@ const Services: React.FC = () => {
             {services.map((service, index) => {
               const Icon = service.icon
               return (
-                <Card key={index} hover>
-                  <div className={`w-16 h-16 mb-4 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center`}>
-                    <Icon className="text-white text-2xl" />
+                <Card key={index} hover className="group">
+                  <div className={`w-16 h-16 mb-4 rounded-full bg-gradient-to-br ${service.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <Icon className="text-white" size={28} />
                   </div>
-                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-gray-600 mb-4">
@@ -160,7 +160,7 @@ const Services: React.FC = () => {
                   <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start text-gray-700">
-                        <FaCheck className="text-green-500 mt-1 mr-2 flex-shrink-0" />
+                        <Check className="text-green-500 mt-1 mr-2 flex-shrink-0" size={16} />
                         <span className="text-sm">{feature}</span>
                       </li>
                     ))}

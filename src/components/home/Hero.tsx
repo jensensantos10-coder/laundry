@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { FaPhone, FaTruck } from 'react-icons/fa'
+import { Phone, Truck } from 'lucide-react'
 import gsap from 'gsap'
 import Button from '../ui/Button'
 import { BUSINESS_INFO } from '../../utils/constants'
@@ -78,13 +78,13 @@ const Hero: React.FC = () => {
             <div ref={buttonsRef} className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Link to="/contact">
                 <Button size="lg" className="w-full sm:w-auto">
-                  <FaTruck className="mr-2" />
+                  <Truck size={20} />
                   Order Pickup
                 </Button>
               </Link>
               <a href={`tel:${BUSINESS_INFO.phone}`}>
                 <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                  <FaPhone className="mr-2" />
+                  <Phone size={20} />
                   Call Us Now
                 </Button>
               </a>
